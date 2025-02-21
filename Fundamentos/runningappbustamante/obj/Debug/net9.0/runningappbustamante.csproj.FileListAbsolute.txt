@@ -1,0 +1,14 @@
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\bin\Debug\net9.0\runningappbustamante.exe
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\bin\Debug\net9.0\runningappbustamante.deps.json
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\bin\Debug\net9.0\runningappbustamante.runtimeconfig.json
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\bin\Debug\net9.0\runningappbustamante.dll
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\bin\Debug\net9.0\runningappbustamante.pdb
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\runningappbustamante.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\runningappbustamante.AssemblyInfoInputs.cache
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\runningappbustamante.AssemblyInfo.cs
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\runningappbustamante.csproj.CoreCompileInputs.cache
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\runningappbustamante.dll
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\refint\runningappbustamante.dll
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\runningappbustamante.pdb
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\runningappbustamante.genruntimeconfig.cache
+C:\Users\haiol\OneDrive\Escritorio\UEM\FundamentosUEM\RunningAppBustamante\runningappbustamante\obj\Debug\net9.0\ref\runningappbustamante.dll
