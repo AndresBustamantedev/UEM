@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Blackjack</h1>
+  <p id="mensajeBienvenida"></p>
+
+  <div class="mesa">
+
+    <!-- BANCA -->
+    <div class="banca">
+      <div class="titulo-jugador">
+        <h2>Banca</h2>
+        <span>Puntos: <span id="puntosBanca">0</span></span>
+      </div>
+      <div id="cartasBanca" class="cartas"></div>
+    </div>
+
+    <!-- JUGADOR -->
+    <div class="jugador">
+      <div class="titulo-jugador">
+        <h2>Jugador: <span id="nombreJugador"></span></h2>
+        <span>Puntos: <span id="puntosJugador">0</span></span>
+      </div>
+      <div id="cartasJugador" class="cartas"></div>
+    </div>
+
+    <!-- MENSAJES -->
+    <div id="estadoJuego"></div>
+    <div class="controles">
+      <button id="btnPedir" disabled>Pedir carta</button>
+      <button id="btnPlantarse" disabled>Plantarse</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <!-- BOTÓN REINICIAR -->
+    <button id="btnReiniciar" style="margin-top:20px; display:none;">
+      Reiniciar partida
+    </button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
