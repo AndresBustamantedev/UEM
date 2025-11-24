@@ -197,3 +197,104 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
+/*reglas nuevas, cambio en formulario*/
+
+/* --- Página de soporte / ticket --- */
+.soporte-hero {
+    background-color: #4c1d95; /* morado tipo eneba */
+    color: #f9fafb;
+    padding: 60px 10%;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.soporte-texto h1 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+}
+
+.soporte-texto p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    max-width: 480px;
+}
+
+.btn-amarillo {
+    background-color: #facc15;
+    color: #111827;
+    font-weight: bold;
+}
+
+.btn-amarillo:hover {
+    background-color: #eab308;
+}
+
+.soporte-info h2 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.soporte-bloque {
+    margin-bottom: 15px;
+}
+
+.soporte-bloque h3 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.mail {
+    color: #fde68a;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* --- Contacto mejorado --- */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.contacto-form h1 {
+    margin-bottom: 10px;
+}
+
+.contacto-form p {
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.contacto-info {
+    background-color: #020617;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contacto-info h2 {
+    margin-bottom: 10px;
+}
+
+.contacto-bloque {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.contacto-bloque ul {
+    list-style: disc;
+    margin-left: 18px;
+}
+
+/* Responsive para soporte y contacto */
+@media (max-width: 768px) {
+    .soporte-hero,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}

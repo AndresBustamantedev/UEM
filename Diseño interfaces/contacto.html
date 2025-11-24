@@ -2,23 +2,29 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>PixelGames Store - Contacto</title>
+    <title>PixelGames Store - Crear ticket</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">🎮 PixelGames Store</div>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="producto.html">Ejemplo de producto</a>
-            <a href="contacto.html" class="active">Contacto</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">🎮 PixelGames Store</div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="producto.html">Ejemplo de producto</a>
+        <a href="ticket.html">Soporte</a>
+        <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+</header>
 
-    <main>
-        <section class="contacto">
-            <h1>Formulario de contacto</h1>
-            <p>Si tienes dudas sobre un pedido o quieres más información sobre nuestros videojuegos, rellena el formulario.</p>
+<main>
+    <section class="contacto-grid">
+        <!-- Columna izquierda: formulario -->
+        <div class="contacto-form">
+            <h1>Crear ticket de soporte</h1>
+            <p>
+                Cuéntanos qué ha pasado con tu compra y te ayudaremos lo antes posible.
+                Cuanta más información nos des, mejor podremos resolver tu problema.
+            </p>
 
             <form action="#" method="post">
                 <label for="nombre">Nombre completo *</label>
@@ -27,16 +33,57 @@
                 <label for="email">Correo electrónico *</label>
                 <input type="email" id="email" name="email" required />
 
-                <label for="mensaje">Mensaje *</label>
+                <label for="pedido">Número de pedido</label>
+                <input type="text" id="pedido" name="pedido" placeholder="#123456" />
+
+                <label for="tipo">Tipo de problema *</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="clave">Clave no funciona</option>
+                    <option value="descarga">Problemas con la descarga</option>
+                    <option value="pago">Problemas con el pago</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="mensaje">Descripción del problema *</label>
                 <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-                <button type="submit" class="btn">Enviar</button>
+                <button type="submit" class="btn">Enviar ticket</button>
             </form>
-        </section>
-    </main>
+        </div>
 
-    <footer>
-        <p>&copy; 2025 PixelGames Store - Todos los derechos reservados</p>
-    </footer>
+        <!-- Columna derecha: info extra -->
+        <aside class="contacto-info">
+            <h2>Información útil</h2>
+
+            <div class="contacto-bloque">
+                <h3>Horario de soporte</h3>
+                <p>Lunes a viernes: 10:00 - 18:00 (CET)</p>
+                <p>Tiempo medio de respuesta: 24h laborales.</p>
+            </div>
+
+            <div class="contacto-bloque">
+                <h3>Antes de enviar el ticket</h3>
+                <ul>
+                    <li>Comprueba tu carpeta de spam para ver si recibiste la clave.</li>
+                    <li>Asegúrate de haber iniciado sesión con la cuenta correcta.</li>
+                    <li>Revisa que el método de pago se haya completado correctamente.</li>
+                </ul>
+            </div>
+
+            <div class="contacto-bloque">
+                <h3>¿Urgente?</h3>
+                <p>
+                    Si tu problema es crítico, añade en el mensaje la palabra
+                    <strong>[URGENTE]</strong> al principio del asunto.
+                </p>
+            </div>
+        </aside>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 PixelGames Store - Todos los derechos reservados</p>
+</footer>
 </body>
 </html>
