@@ -1,4 +1,19 @@
-/* Fuente y fondo general */
+/* =========================
+   VARIABLES / RESET BÁSICO
+   ========================= */
+:root {
+    --bg-main: #0b0320;
+    --bg-panel: #1b0b3a;
+    --bg-panel-soft: #25114d;
+    --purple: #4c1d95;
+    --purple-soft: #5b21b6;
+    --yellow: #facc15;
+    --yellow-dark: #eab308;
+    --text-main: #f9fafb;
+    --text-muted: #cbd5f5;
+    --accent-blue: #2563eb;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,18 +22,25 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #0f172a;
-    color: #f9fafb;
+    background: radial-gradient(circle at top, #1e1b4b 0, #020617 45%, #020617 100%);
+    color: var(--text-main);
     line-height: 1.5;
 }
 
-/* Cabecera y navegación */
-header {
+/* =========================
+   LAYOUT GENERAL
+   ========================= */
+header,
+footer {
     background-color: #020617;
-    padding: 15px 10%;
+}
+
+header {
+    padding: 14px 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 .logo {
@@ -27,274 +49,361 @@ header {
 }
 
 nav a {
-    color: #e5e7eb;
+    color: var(--text-muted);
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 18px;
     font-size: 0.95rem;
 }
 
 nav a:hover,
 nav a.active {
-    text-decoration: underline;
+    color: #fff;
 }
 
-/* Contenido principal */
 main {
     padding: 30px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Botón general */
+footer {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 40px;
+    border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* =========================
+   BOTONES Y ELEMENTOS COMUNES
+   ========================= */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #2563eb;
-    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--accent-blue), #7c3aed);
+    color: #fff;
     text-decoration: none;
-    border-radius: 4px;
-    margin-top: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
 }
 
 .btn:hover {
-    background-color: #1d4ed8;
+    opacity: 0.95;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.5);
+    transform: translateY(-1px);
 }
 
-/* Sección hero (portada) */
+.btn-amarillo {
+    background: var(--yellow);
+    color: #111827;
+    box-shadow: 0 8px 18px rgba(250, 204, 21, 0.4);
+}
+
+.btn-amarillo:hover {
+    background: var(--yellow-dark);
+}
+
+/* Formularios */
+form {
+    max-width: 520px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 4px;
+    font-size: 0.9rem;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #4b5563;
+    background-color: #020617;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+/* Tarjetas genéricas */
+.card,
+.contacto-info,
+.carac-item {
+    background: var(--bg-panel);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* =========================
+   INICIO (index.html)
+   ========================= */
 .hero {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 30px;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
 }
 
 .hero-text p {
     font-size: 1rem;
-    max-width: 500px;
+    color: var(--text-muted);
+    max-width: 520px;
 }
 
 .hero-img img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Tarjetas de categorías */
-.destacados {
-    margin-top: 40px;
-}
-
+/* Categorías */
 .destacados h2 {
-    margin-bottom: 20px;
-    font-size: 1.4rem;
+    margin-bottom: 16px;
+    font-size: 1.35rem;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.card {
-    background-color: #111827;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
+    gap: 18px;
 }
 
 .card img {
     width: 100%;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
 }
 
-/* Página de producto */
+.card h3 {
+    margin-bottom: 4px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* =========================
+   PRODUCTO (producto.html)
+   ========================= */
 .producto {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
     gap: 30px;
+    margin-bottom: 30px;
 }
 
 .producto-img img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
 }
 
 .producto-info h1 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .precio {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #22c55e;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .descripcion {
     margin-bottom: 15px;
+    color: var(--text-muted);
 }
 
-.detalles {
+.detalles,
+.detalles + ul {
     list-style: disc;
-    margin-left: 20px;
-    margin-bottom: 15px;
+    margin-left: 18px;
+    margin-bottom: 14px;
+    font-size: 0.92rem;
 }
 
-/* Formulario de contacto */
-.contacto h1 {
+/* Bloque tipo Eneba */
+.producto-extra {
+    background-color: var(--purple);
+    padding: 24px 20px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.viendo {
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+}
+
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.carac-item {
+    background: rgba(15, 23, 42, 0.4);
+}
+
+.carac-item .icono {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.carac-item h3 {
+    margin-bottom: 3px;
+    font-size: 1rem;
+}
+
+.carac-item p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.link {
+    font-size: 0.86rem;
+    color: #fde68a;
+    text-decoration: none;
+}
+
+.link.verde {
+    color: #6ee7b7;
+}
+
+/* =========================
+   SOPORTE (ticket.html)
+   ========================= */
+.soporte-hero {
+    background-color: var(--purple);
+    border-radius: 14px;
+    padding: 40px 32px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.soporte-texto h1 {
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
-.contacto p {
-    margin-bottom: 20px;
+.soporte-texto p {
+    max-width: 460px;
+    color: #e5e7eb;
+    margin-bottom: 18px;
+}
+
+.soporte-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.soporte-bloque {
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+}
+
+.soporte-bloque h3 {
+    margin-bottom: 2px;
+}
+
+.mail {
+    color: #fde68a;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   CONTACTO (contacto.html)
+   ========================= */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.contacto-form h1 {
+    margin-bottom: 8px;
+}
+
+.contacto-form p {
+    margin-bottom: 18px;
     max-width: 600px;
+    color: var(--text-muted);
 }
 
-form {
-    max-width: 500px;
+.contacto-info {
+    background: var(--bg-panel-soft);
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 10px;
+.contacto-info h2 {
+    margin-bottom: 8px;
 }
 
-input,
-textarea {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: none;
-    margin-bottom: 5px;
+.contacto-bloque {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
 }
 
-/* Pie de página */
-footer {
-    background-color: #020617;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 40px;
-    font-size: 0.85rem;
+.contacto-bloque ul {
+    list-style: disc;
+    margin-left: 16px;
+    margin-top: 4px;
 }
 
-/* Responsive simple */
-@media (max-width: 768px) {
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+    main {
+        padding: 24px 6%;
+    }
+
     header {
+        padding: 12px 6%;
         flex-direction: column;
         align-items: flex-start;
     }
 
     nav {
-        margin-top: 10px;
+        margin-top: 8px;
     }
 
     .hero,
     .producto,
-    .cards {
+    .soporte-hero,
+    .contacto-grid {
         grid-template-columns: 1fr;
+    }
+
+    .caracteristicas-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-
-/*reglas nuevas, cambio en formulario*/
-
-/* --- Página de soporte / ticket --- */
-.soporte-hero {
-    background-color: #4c1d95; /* morado tipo eneba */
-    color: #f9fafb;
-    padding: 60px 10%;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 40px;
-    align-items: center;
-    border-radius: 8px;
-}
-
-.soporte-texto h1 {
-    font-size: 2.4rem;
-    margin-bottom: 15px;
-}
-
-.soporte-texto p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    max-width: 480px;
-}
-
-.btn-amarillo {
-    background-color: #facc15;
-    color: #111827;
-    font-weight: bold;
-}
-
-.btn-amarillo:hover {
-    background-color: #eab308;
-}
-
-.soporte-info h2 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.soporte-bloque {
-    margin-bottom: 15px;
-}
-
-.soporte-bloque h3 {
-    font-size: 1rem;
-    margin-bottom: 3px;
-}
-
-.mail {
-    color: #fde68a;
-    font-weight: bold;
-    font-size: 0.95rem;
-}
-
-/* --- Contacto mejorado --- */
-.contacto-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.contacto-form h1 {
-    margin-bottom: 10px;
-}
-
-.contacto-form p {
-    margin-bottom: 20px;
-    max-width: 600px;
-}
-
-.contacto-info {
-    background-color: #020617;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.contacto-info h2 {
-    margin-bottom: 10px;
-}
-
-.contacto-bloque {
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-}
-
-.contacto-bloque ul {
-    list-style: disc;
-    margin-left: 18px;
-}
-
-/* Responsive para soporte y contacto */
-@media (max-width: 768px) {
-    .soporte-hero,
-    .contacto-grid {
+@media (max-width: 600px) {
+    .cards,
+    .caracteristicas-grid {
         grid-template-columns: 1fr;
     }
 }
