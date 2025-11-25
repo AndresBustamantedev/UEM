@@ -25,6 +25,15 @@ body {
     background: radial-gradient(circle at top, #1e1b4b 0, #020617 45%, #020617 100%);
     color: var(--text-main);
     line-height: 1.5;
+
+    /* NUEVO: layout para footer fijo al fondo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html, body {
+    height: 100%;
 }
 
 /* =========================
@@ -64,6 +73,9 @@ main {
     padding: 30px 10%;
     max-width: 1200px;
     margin: 0 auto;
+
+    /* NUEVO: que ocupe el espacio disponible */
+    flex: 1;
 }
 
 footer {
