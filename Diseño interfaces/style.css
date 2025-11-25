@@ -83,8 +83,10 @@ footer {
     padding: 12px 0;
     font-size: 0.85rem;
     color: var(--text-muted);
-    margin-top: 40px;
     border-top: 1px solid rgba(148, 163, 184, 0.25);
+
+    /* NUEVO: se pega al final de la columna */
+    margin-top: auto;
 }
 
 /* =========================
