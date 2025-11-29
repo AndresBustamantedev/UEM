@@ -1,0 +1,3 @@
+Portátil;799.99;10
+Teléfono;299.99;5
+Tablet;199.99;0
