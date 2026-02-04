@@ -87,15 +87,25 @@ export class App implements OnInit {
     Swal.fire({
       title: 'Confirmar compra',
       text: `Vas a realizar una compra por valor de ${total.toFixed(2)}. ¿Estás seguro?`,
-      icon: 'question',
+      imageUrl: 'logo.png', // Logo de la tienda
+      imageWidth: 200,
+      imageHeight: 'auto',
+      imageAlt: 'Logo Tienda',
       showCancelButton: true,
       confirmButtonText: 'Aceptar',
-      cancelButtonText: 'Cancelar'
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#e6441d', // Color naranja personalizado
+      cancelButtonColor: '#3085d6'
     }).then((result) => {
       if (result.isConfirmed) {
         // Si confirma, vaciar carrito y mostrar éxito
         this.cart.set([]);
-        Swal.fire('¡Compra realizada!', 'Tu carrito ha sido vaciado.', 'success');
+        Swal.fire({
+          title: '¡Compra realizada!',
+          text: 'Tu carrito ha sido vaciado.',
+          icon: 'success',
+          confirmButtonColor: '#e6441d'
+        });
       }
     });
   }
