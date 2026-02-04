@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* Puedes agregar estilos globales a este archivo, y también importar otros archivos de estilo */
+@import 'animate.css';
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+button {
+    cursor: pointer;
+}
