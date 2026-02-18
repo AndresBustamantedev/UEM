@@ -40,7 +40,7 @@ export class App implements OnInit {
 
   fetchProducts() {
     // Obteniendo 100 productos para tener suficiente variedad para los filtros
-    this.http.get<ProductsResponse>(' ')
+    this.http.get<ProductsResponse>('https://dummyjson.com/products?limit=100')
       .subscribe({
         next: (res) => {
           this.products.set(res.products);
