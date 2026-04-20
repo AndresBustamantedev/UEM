@@ -1,16 +1,68 @@
-# React + Vite
+# Los Simpsons
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SPA sencilla para explorar personajes de *Los Simpson* usando la API pública:
+<https://thesimpsonsapi.com/api>
 
-Currently, two official plugins are available:
+Proyecto pensado como entrega realista (DAW2): código simple, estructura clara, Bootstrap y funcionalidades básicas pero completas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- Listado de personajes en cards (imagen, nombre, ocupación, estado)
+- Modal de detalle (imagen grande, edad, cumpleaños, frases si existen)
+- Búsqueda por nombre
+- Filtros por edad y género
+- Paginación
+- Favoritos con `localStorage`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+- React + Vite
+- React Router DOM
+- Bootstrap + React Bootstrap
+- Fetch API
+- localStorage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Rutas
+
+- `/` Inicio
+- `/characters` Personajes
+- `/favorites` Favoritos
+
+## Instalación y uso
+
+```bash
+npm install
+npm run dev
+```
+
+Build de producción:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Estructura
+
+```txt
+src/
+  components/
+    Navbar.jsx
+    SearchBar.jsx
+    CharacterCard.jsx
+    CharacterModal.jsx
+  pages/
+    Home.jsx
+    Characters.jsx
+    Favorites.jsx
+  services/
+    simpsonsService.js
+  App.jsx
+  main.jsx
+```
+
+## Notas
+
+- La API devuelve personajes paginados (20 por página). En esta app, la página de personajes carga todos los personajes y aplica búsqueda/filtros de forma global.
+- Las imágenes se sirven desde el CDN de la API.
+
