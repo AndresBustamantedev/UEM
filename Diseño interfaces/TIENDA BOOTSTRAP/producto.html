@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelGames Store - Juego destacado</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">🎮 PixelGames Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="producto.html">Ejemplo de producto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ticket.html">Soporte</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="producto-background">
+        <div class="container producto-content">
+            <section class="producto row g-5 mb-5">
+                <div class="col-md-6 d-flex flex-column justify-content-between">
+                    <!-- Cambia la ruta por una imagen de un juego -->
+                    <img src="img/pixel1.png" class="img-fluid mb-3 rounded shadow w-100" id="mainImage" alt="Portada del videojuego">
+                    
+                    <!-- Galería de imágenes -->
+                    <div class="d-flex justify-content-between gap-2">
+                        <img src="img/pixel1.png" class="img-thumbnail thumbnail active" onclick="changeImage(this)" alt="Vista 1">
+                        <img src="img/pixel2.png" class="img-thumbnail thumbnail" onclick="changeImage(this)" alt="Vista 2">
+                        <img src="img/pixel3.png" class="img-thumbnail thumbnail" onclick="changeImage(this)" alt="Vista 3">
+                        <img src="img/pixel4.png" class="img-thumbnail thumbnail" onclick="changeImage(this)" alt="Vista 4">
+                    </div>
+                </div>
+
+                <div class="col-md-6 d-flex flex-column">
+                    <h1 class="fw-bold mb-2 text-white" style="font-size: 2.5rem;">Pixel Warrior 6 </h1>
+                    <p class="precio mb-3 fs-4">34,99 €</p>
+                    <p class="descripcion mb-4 text-muted-custom" style="font-size: 0.95rem;">
+                        Pixel Warrior es un shooter táctico en pixel-art moderno, donde acción militar explosiva se mezcla con habilidades especiales al estilo hero-shooter. Cada partida es rápida, intensa y estratégica: combina armas realistas con poderes únicos para dominar el campo de batalla.
+                    </p>
+
+                    <ul class="detalles list-unstyled ms-0 mb-4 text-muted-custom" style="font-size: 0.9rem;">
+                        <li class="mb-2"><strong class="text-white">Plataforma:</strong> PC / PS5 / Xbox Series / Nintendo Switch</li>
+                        <li class="mb-2"><strong class="text-white">Modo de juego:</strong> Un jugador / Cooperativo local</li>
+                        <li class="mb-2"><strong class="text-white">Edad recomendada:</strong> +12</li>
+                        <li class="mb-2"><strong class="text-white">Género:</strong> Shooter táctico / Hero Shooter / Pixel-Art</li>
+                    </ul>
+
+                    <button type="button" class="btn btn-custom btn-lg w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#cartModal">Agregar al carrito</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--bg-panel); color: var(--text-main);">
+                <div class="modal-header border-bottom-0">
+                    <h1 class="modal-title fs-5 fw-bold" id="cartModalLabel">¡Oferta Especial! 🎉</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <i class="bi bi-gift-fill text-warning display-1 mb-3 d-block"></i>
+                    <p class="fs-5 mb-0">Dale a aceptar y llévate un <br><strong class="text-warning">Póster de Pixel Warrior 6</strong><br> totalmente GRATIS.</p>
+                </div>
+                <div class="modal-footer border-top-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">No, gracias</button>
+                    <button type="button" class="btn btn-custom px-4">¡Aceptar oferta!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container my-5 flex-grow-1">
+        <section class="producto-extra p-4 rounded mt-4">
+            <p class="viendo mb-4">🟢 <strong>2 persona(s)</strong> viendo este producto</p>
+        
+            <div class="caracteristicas-grid row g-3">
+        
+                <div class="col-6 col-md-3">
+                    <div class="carac-item h-100 p-3">
+                        <div class="icono"><i class="bi bi-globe-americas"></i></div>
+                        <h3 class="h6 fw-bold">Global</h3>
+                        <p class="small text-muted-custom">Se puede activar en <strong>España</strong></p>
+                        <a href="#" class="link">Consulta las restricciones por región</a>
+                    </div>
+                </div>
+        
+                <div class="col-6 col-md-3">
+                    <div class="carac-item h-100 p-3">
+                        <div class="icono"><i class="bi bi-key-fill"></i></div>
+                        <h3 class="h6 fw-bold">Código Digital</h3>
+                        <p class="small text-muted-custom">Edición digital del producto (CD-KEY)</p>
+                        <a href="#" class="link verde">Entrega inmediata</a>
+                    </div>
+                </div>
+        
+                <div class="col-6 col-md-3">
+                    <div class="carac-item h-100 p-3">
+                        <div class="icono"><i class="bi bi-question-circle-fill"></i></div>
+                        <h3 class="h6 fw-bold">Other</h3>
+                        <p class="small text-muted-custom">
+                            Consulta la descripción del producto para encontrar instrucciones de cómo activarlo.
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="col-6 col-md-3">
+                    <div class="carac-item h-100 p-3">
+                        <div class="icono"><i class="bi bi-cash-stack"></i></div>
+                        <h3 class="h6 fw-bold">Reembolsos instantáneos</h3>
+                        <p class="small text-muted-custom">
+                            Recibe un reembolso instantáneo por claves no vistas.
+                        </p>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2025 PixelGames Store - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function changeImage(element) {
+            // Cambiar la imagen principal
+            document.getElementById('mainImage').src = element.src;
+            
+            // Actualizar clase active
+            document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>

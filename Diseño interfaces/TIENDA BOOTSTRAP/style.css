@@ -1,0 +1,324 @@
+/* =========================
+   VARIABLES / CONFIGURACIÓN
+   ========================= */
+:root {
+    --bg-main: #0b0320;
+    --bg-panel: #1b0b3a;
+    --bg-panel-soft: #25114d;
+    --purple: #4c1d95;
+    --purple-soft: #5b21b6;
+    --yellow: #facc15;
+    --yellow-dark: #eab308;
+    --text-main: #f9fafb;
+    --text-muted: #cbd5f5;
+    --accent-blue: #2563eb;
+}
+
+/* Forzar scrollbar siempre para evitar saltos de layout */
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Boostrap usa system-ui, puedes dejar este o quitarlo */
+    background: radial-gradient(circle at top, #1e1b4b 0, #020617 45%, #020617 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   OVERRIDES BOOTSTRAP
+   ========================= */
+/* Ajuste de ancho máximo para parecerse al diseño original */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px !important; /* Más compacto para reducir altura de imágenes */
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    padding: 14px 0;
+    position: relative;
+    z-index: 10; /* Asegurar que esté por encima del fondo del producto */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--text-main) !important;
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+    margin-left: 10px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff !important;
+}
+
+/* Footer */
+footer {
+    background-color: #020617;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(148, 163, 184, 0.25);
+    margin-top: auto;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Botones */
+.btn-custom {
+    padding: 10px 22px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--accent-blue), #7c3aed);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+
+.btn-custom:hover {
+    opacity: 0.95;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.5);
+    transform: translateY(-1px);
+    color: #fff;
+}
+
+.btn-amarillo {
+    background: var(--yellow);
+    color: #111827;
+    box-shadow: 0 8px 18px rgba(250, 204, 21, 0.4);
+    font-weight: 600;
+}
+
+.btn-amarillo:hover {
+    background: var(--yellow-dark);
+    color: #111827;
+}
+
+/* Cards y Paneles */
+.card-custom, 
+.contacto-info, 
+.carac-item {
+    background: var(--bg-panel);
+    border-radius: 10px;
+    border: none; /* Quitar borde default de bootstrap si se usa .card */
+}
+
+.card-custom img {
+    border-radius: 8px;
+}
+
+.card-custom h3 {
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+/* Animaciones Tarjetas */
+.card-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.zoom-img {
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.card-custom:hover .zoom-img {
+    transform: scale(1.1);
+}
+
+/* Galería de Producto */
+.thumbnail {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+    width: 23%;
+    border: 2px solid transparent;
+    background-color: var(--bg-panel);
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    opacity: 1;
+    border-color: var(--accent-blue);
+}
+
+/* Inputs / Forms */
+.form-control, .form-select {
+    background-color: #020617;
+    border: 1px solid #4b5563;
+    color: var(--text-main);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #0b0320;
+    color: var(--text-main);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   PÁGINAS ESPECÍFICAS
+   ========================= */
+
+/* Fondo degradado para la página de producto */
+.producto-background {
+    position: relative;
+    /* Usa la imagen del juego como fondo */
+    background: url('img/pixelfondo.png') no-repeat center top;
+    background-size: cover;
+    /* Padding superior generoso para separar el contenido del header */
+    padding-top: 150px; 
+    /* Padding inferior para dar aire antes del footer */
+    padding-bottom: 50px;
+    /* Margen negativo para pegar con el header si es necesario, o ajuste de layout */
+    margin-top: -80px; 
+}
+
+/* Capa oscura (overlay) para que el texto sea legible */
+.producto-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Degradado de morado a transparente a oscuro que COINCIDA con el body (#020617) */
+    background: linear-gradient(
+        to bottom, 
+        rgba(76, 29, 149, 0.4) 0%, 
+        rgba(2, 6, 23, 0.9) 70%, 
+        #020617 100%
+    );
+    z-index: 1;
+}
+
+/* Asegurar que el contenido (container) esté por encima del fondo */
+.producto-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Index */
+.hero-img img {
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Producto */
+.producto-img img {
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajuste específico para la imagen principal de producto */
+#mainImage {
+    object-fit: contain; /* Muestra la imagen completa sin recortar */
+    aspect-ratio: 16/9; /* Mantiene la forma rectangular alineada */
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro para rellenar huecos */
+}
+
+.precio {
+    font-size: 1.4rem;
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.producto-extra {
+    background-color: var(--purple);
+    border-radius: 12px;
+}
+
+.carac-item {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 15px;
+}
+
+.icono {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.link {
+    color: #fde68a;
+    text-decoration: none;
+    font-size: 0.86rem;
+}
+
+.link.verde {
+    color: #6ee7b7;
+}
+
+/* Soporte / Ticket */
+.soporte-hero {
+    background-color: var(--purple);
+    border-radius: 14px;
+    padding: 40px 32px;
+}
+
+.mail {
+    color: #fde68a;
+    font-weight: 600;
+}
+
+/* Contacto Info */
+.contacto-info {
+    background: var(--bg-panel-soft);
+    padding: 20px;
+}
+
+/* Textos */
+.text-muted-custom {
+    color: var(--text-muted) !important;
+}
+
+/* FAQ Accordion */
+.accordion-item {
+    background-color: var(--bg-panel);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    margin-bottom: 10px;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background-color: var(--bg-panel);
+    color: var(--text-main);
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--purple-soft);
+    color: #fff;
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-body {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
