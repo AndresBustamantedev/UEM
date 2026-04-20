@@ -3,6 +3,9 @@
 SPA sencilla para explorar personajes de *Los Simpson* usando la API pública:
 <https://thesimpsonsapi.com/api>
 
+DESPLIEGUE en VERCEL
+https://simpsons-alpha.vercel.app
+
 Proyecto pensado como entrega realista (DAW2): código simple, estructura clara, Bootstrap y funcionalidades básicas pero completas.
 
 ## Funcionalidades
