@@ -1,0 +1,104 @@
+/* ---- ESTILO GENERAL ---- */
+body {
+  font-family: Arial, sans-serif;
+  background: #0b5c3b;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+/* ---- CONTENEDOR DE LA MESA ---- */
+.mesa {
+  background: #166a47;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  width: 90%;
+  max-width: 800px;
+}
+
+/* ---- SECCIONES DE JUGADOR Y BANCA ---- */
+.banca, .jugador {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.titulo-jugador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* ---- CARTAS ---- */
+.cartas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-height: 75px;
+}
+
+.carta {
+  width: 70px;          /* Ajusta según tamaño de tus PNG */
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+/* ---- BOTONES ---- */
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #ffd60a;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#btnPlantarse {
+  background: #e63946;
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- MENSAJES ---- */
+#estadoJuego,
+#resultado {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* ---- BOTÓN REINICIAR ---- */
+#btnReiniciar {
+  background: #1d3557;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 18px;
+  cursor: pointer;
+}

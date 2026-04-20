@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  background: #f8f9fa;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
