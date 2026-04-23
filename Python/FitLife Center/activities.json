@@ -1,0 +1,10 @@
+[
+    {
+        "type": "PersonalTraining",
+        "name": "Karate",
+        "base_price": 30.0,
+        "max_spots": 6,
+        "surcharge_percentage": 10.0,
+        "occupied_spots": 0
+    }
+]

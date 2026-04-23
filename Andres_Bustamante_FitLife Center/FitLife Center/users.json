@@ -1,0 +1,8 @@
+[
+    {
+        "type": "Client",
+        "name": "Andres Bustamante",
+        "email": "andres@cliente.com",
+        "reservations": []
+    }
+]

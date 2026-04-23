@@ -1,59 +1,84 @@
-# TiendaDummyjson
+# Documentación del Proyecto: Tienda DummyJSON
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+## 1. Descripción General
+Este proyecto consiste en una Single Page Application (SPA) desarrollada con **Angular** que simula una tienda online. La aplicación consume datos de una API externa (DummyJSON), permite filtrar productos, añadirlos a un carrito de compras y simular un proceso de compra.
 
-## Development server
+El proyecto ha sido diseñado para cumplir con los objetivos de aprendizaje relacionados con la creación de objetos, gestión de eventos y manipulación del DOM mediante un framework moderno.
 
-To start a local development server, run:
+## 2. Objetivos y Resultados de Aprendizaje (RA)
+El desarrollo cubre los siguientes puntos del enunciado:
 
-```bash
-ng serve
-```
+*   **RA2 (Sintaxis y Ejecución)**: Uso de TypeScript/JavaScript moderno (ES6+) con tipos estrictos.
+*   **RA3 (Objetos Predefinidos)**: Utilización de `fetch` (vía `HttpClient`), `Math`, `JSON`, etc.
+*   **RA5 (Eventos)**: Gestión de eventos de usuario (`click`, `change`, `input`) para filtros y acciones del carrito.
+*   **RA6 (Modelo de Objetos)**: Renderizado dinámico del DOM basado en el estado de la aplicación (Angular Signals).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 3. Arquitectura Técnica
 
-## Code scaffolding
+### 3.1 Framework: Angular (Versión Moderna)
+Se ha utilizado la última arquitectura de Angular basada en **Standalone Components** y **Signals**, prescindiendo de los módulos tradicionales (`NgModule`) para reducir la complejidad y mejorar el rendimiento.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+*   **Signals (`signal`, `computed`)**: Se utilizan para la gestión del estado reactivo. Cuando una señal cambia (ej. se añade un producto al carrito), la vista se actualiza automáticamente sin necesidad de manipulación manual del DOM.
+*   **Control Flow (`@for`, `@if`)**: Se utiliza la nueva sintaxis de plantillas de Angular para iterar sobre listas y mostrar elementos condicionalmente.
 
-```bash
-ng generate component component-name
-```
+### 3.2 Estructura de Datos
+El modelo de datos se define en `src/app/models/product.model.ts`:
+*   **`Product`**: Interfaz que define la estructura de un producto (id, título, precio, categoría, imagen, etc.).
+*   **`ProductsResponse`**: Interfaz para tipar la respuesta de la API.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 4. Funcionalidades Detalladas
 
-```bash
-ng generate --help
-```
+### 4.1 Carga de Datos
+*   **Fuente**: `https://dummyjson.com/products`
+*   **Implementación**: Se utiliza `HttpClient` de Angular para realizar una petición GET asíncrona. Los datos se cargan al iniciar el componente (`ngOnInit`).
 
-## Building
+### 4.2 Filtrado de Productos
+Ubicado en la parte superior (`header`). Permite filtrar por:
+1.  **Precio Mínimo**: Input numérico.
+2.  **Categoría**: Desplegable dinámico generado a partir de los productos cargados.
+3.  **Marca**: Desplegable dinámico generado a partir de los productos cargados.
 
-To build the project run:
+**Lógica**: Se utiliza un método `applyFilters()` que recalcula la lista `filteredProducts` basándose en los criterios seleccionados.
 
-```bash
-ng build
-```
+### 4.3 Carrito de Compras
+Ubicado en el lateral derecho (`aside`).
+*   **Añadir**: Botón en cada tarjeta de producto.
+*   **Eliminar**: Botón (X) en cada ítem del carrito.
+*   **Total**: Propiedad computada (`computed`) que recalcula el precio total automáticamente cada vez que el carrito cambia.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 4.4 Simulación de Compra
+Al pulsar "Comprar", se activa un flujo de confirmación utilizando la librería externa **SweetAlert2**.
+*   Mensaje: "¿Estás seguro? Vas a realizar una compra por valor de XXX".
+*   Acción: Si se confirma, se vacía el carrito y se muestra un mensaje de éxito.
 
-## Running unit tests
+## 5. Librerías Externas Utilizadas
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1.  **SweetAlert2** (`sweetalert2`)
+    *   **Uso**: Reemplazo estético para los `alert` y `confirm` nativos del navegador.
+    *   **Motivo**: Mejora la experiencia de usuario (UX) en el proceso de confirmación de compra.
 
-```bash
-ng test
-```
+2.  **Animate.css** (`animate.css`)
+    *   **Uso**: Biblioteca CSS para animaciones de entrada.
+    *   **Aplicación**:
+        *   `animate__fadeInDown`: Aparición suave de los filtros.
+        *   `animate__zoomIn`: Efecto de zoom al cargar las tarjetas de productos.
+        *   `animate__slideInRight`: Entrada lateral al añadir elementos al carrito.
 
-## Running end-to-end tests
+## 6. Estructura de Archivos Clave
 
-For end-to-end (e2e) testing, run:
+*   **`src/app/app.ts`**: Lógica principal (Componente). Contiene el estado (signals), la inyección de dependencias y los métodos de negocio.
+*   **`src/app/app.html`**: Vista (Template). Estructura HTML con bindings de Angular (`[value]`, `(click)`) y clases de animación.
+*   **`src/app/app.scss`**: Estilos. Uso de SCSS para estilos anidados, Grid Layout para la maqueta y diseño responsive.
+*   **`src/app/app.config.ts`**: Configuración global. Habilita `HttpClient` con `withFetch`.
 
-```bash
-ng e2e
-```
+## 7. Instrucciones de Ejecución
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1.  **Instalar dependencias**:
+    ```bash
+    npm install
+    ```
+2.  **Iniciar servidor de desarrollo**:
+    ```bash
+    npm start
+    ```
+3.  **Visualizar**: Abrir `http://localhost:4200` en el navegador.
